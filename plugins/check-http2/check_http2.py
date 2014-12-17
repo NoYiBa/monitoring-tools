@@ -31,7 +31,7 @@ from shinkenplugins.plugin import ShinkenPlugin, NativePlugin
 class CheckHttp2(ShinkenPlugin):
 
     NAME = 'check-http2'
-    VERSION = '0.1'
+    VERSION = '0.2'
     DESCRIPTION = "Checks HTTP sites, and doesn't timeout like good'old check_http."
     AUTHOR = 'Matthieu Caneill'
     EMAIL = 'matthieu.caneill@savoirfairelinux.com'
