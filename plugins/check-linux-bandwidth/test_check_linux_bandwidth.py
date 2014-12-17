@@ -18,6 +18,8 @@
 import shutil
 import os
 
+import unittest
+
 from shinkenplugins import TestPlugin
 
 from check_linux_bandwidth import Plugin
@@ -209,3 +211,8 @@ class Test(TestPlugin):
         args = ["-i", "lo", "-w", "0", "-c", "0", "-d", "5", "-f", "-s", "/tmp/"]
         self.execute(Plugin, args, 0, "First use of plugin")
         self.execute(Plugin, args, 2, "CRITICAL: lo usage: .*GB")
+
+
+
+if __name__ == '__main__':
+    unittest.main()
