@@ -1,1 +1,0 @@
-check_libvirt_stats
