@@ -1,1 +1,1 @@
-check_quebecrencontrescom /usr/lib/monitoring/plugins/sfl
+check_quebecrencontrescom.py /usr/lib/monitoring/plugins/sfl

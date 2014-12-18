@@ -1,1 +1,1 @@
-check_json_by_ec2_tags /usr/lib/monitoring/plugins/sfl
+check_json_by_ec2_tags.py /usr/lib/monitoring/plugins/sfl

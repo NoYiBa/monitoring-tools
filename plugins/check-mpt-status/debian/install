@@ -1,1 +1,1 @@
-check_mpt_status /usr/lib/monitoring/plugins/sfl
+check_mpt_status.py /usr/lib/monitoring/plugins/sfl

@@ -1,1 +1,1 @@
-check_reseaucontactcom /usr/lib/monitoring/plugins/sfl
+check_reseaucontactcom.py /usr/lib/monitoring/plugins/sfl

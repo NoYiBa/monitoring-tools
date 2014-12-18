@@ -1,1 +1,1 @@
-check_site_health /usr/lib/monitoring/plugins/sfl
+check_site_health.py /usr/lib/monitoring/plugins/sfl

@@ -1,2 +1,2 @@
-check_libvirt_stats /usr/lib/monitoring/plugins/sfl
+check_libvirt_stats.py /usr/lib/monitoring/plugins/sfl
 libvirtstat.py /usr/lib/monitoring/plugins/sfl

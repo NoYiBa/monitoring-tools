@@ -1,1 +1,1 @@
-check_bixi_montreal /usr/lib/monitoring/plugins/sfl
+check_bixi_montreal.py /usr/lib/monitoring/plugins/sfl

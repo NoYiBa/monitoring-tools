@@ -1,1 +1,1 @@
-check_brother_toner_level /usr/lib/monitoring/plugins/sfl
+check_brother_toner_level.py /usr/lib/monitoring/plugins/sfl
