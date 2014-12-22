@@ -389,27 +389,17 @@ class CheckLinuxBandwidth(ShinkenPlugin):
             transmit_per_month = "%0.2f" % (float(transmit_per_month))
             usage_per_month = "%0.2f" % usage_per_month
 
+            msg = "%s usage: %0.2f%% (%s/%0.2fGB)" % (
+                    interface,
+                    usage_per_month_percent,
+                    usage_per_month,
+                    limit)
+
             if usage_per_month_percent < warning:
-                msg = ("%s usage: %0.2f%% "
-                       "(%s/%0.2fGB)" % (interface,
-                                         usage_per_month_percent,
-                                         usage_per_month,
-                                         limit))
                 func = self.ok
-            elif usage_per_month_percent >= warning and usage_per_month_percent < critical:
-                msg = ("%s usage: %0.2f%% "
-                       "(%s/%0.2fGB)" % (interface,
-                                         usage_per_month_percent,
-                                         usage_per_month,
-                                         limit))
+            elif warning <= usage_per_month_percent < critical:
                 func = self.warning
             else:
-            #elif usage_per_month_percent >= critical:
-                msg = ("%s usage: %0.2f%% "
-                       "(%s/%0.2fGB)" % (interface,
-                                         usage_per_month_percent,
-                                         usage_per_month,
-                                         limit))
                 func = self.critical
 
             # check_linux_bandwith_usage -i eth0 -W 50 -C 90 -d 10 -l 500 -f
@@ -452,27 +442,16 @@ class CheckLinuxBandwidth(ShinkenPlugin):
             # user give warning in GB so calculate in %
             usage_per_month_percent = (usage_per_month / limit) * 100
 
+            msg = ("%s usage: %0.2f%% "
+                   "(%0.2f/%0.2fGB)" % (interface,
+                                        usage_per_month_percent,
+                                        usage_per_month,
+                                        limit))
             if usage_per_month < warning:
-                msg = ("%s usage: %0.2f%% "
-                       "(%0.2f/%0.2fGB)" % (interface,
-                                            usage_per_month_percent,
-                                            usage_per_month,
-                                            limit))
                 func = self.ok
             elif usage_per_month >= warning and usage_per_month < critical:
-                msg = ("%s usage: %0.2f%% "
-                       "(%0.2f/%0.2fGB)" % (interface,
-                                            usage_per_month_percent,
-                                            usage_per_month,
-                                            limit))
                 func = self.warning
             else:
-            #elif usage_per_month >= critical:
-                msg = ("%s usage: %0.2f%% "
-                       "(%0.2f/%0.2fGB)" % (interface,
-                                            usage_per_month_percent,
-                                            usage_per_month,
-                                            limit))
                 func = self.critical
 
             # convert all data to float with 2 decimal places
@@ -519,16 +498,13 @@ class CheckLinuxBandwidth(ShinkenPlugin):
             func(msg, p1, p2, p3, p4)
 
 
+        msg = "%s usage: %0.2fGB" % (interface, usage_per_month)
         # check_linux_bandwith_usage -i eth0 -w 50 -c 90 -d 5
         if usage_per_month < warning:
-            msg = "%s usage: %0.2fGB" % (interface, usage_per_month)
             func = self.ok
         elif usage_per_month >= warning and usage_per_month < critical:
-            msg = "%s usage: %0.2fGB" % (interface, usage_per_month)
             func = self.warning
         else:
-        #elif usage_per_month >= critical:
-            msg = "%s usage: %0.2fGB" % (interface, usage_per_month)
             func = self.critical
 
         # check_linux_bandwith_usage -i eth0 -w 50 -c 90 -d 5 -f
